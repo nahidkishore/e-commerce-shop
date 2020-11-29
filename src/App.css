@@ -111,11 +111,92 @@ a {
   text-align: right;
   font-size: 18px;
 }
-.product__price span {
+.product__price .discount {
   color: silver;
   font-weight: 400;
   font-size: 13px;
 }
+.actualPrice{
+  text-decoration: line-through;
+  font-size:18px;
+}
+.details__image{
+  width: 100%;
+  height: auto;
+  padding-right: 30px;
+}
+.details__image img{
+  width: 100%;
+  height: auto;
+  margin-bottom: 25px;
+}
+.details__name{
+  margin-top:30px;
+  font-size: 28px;
+	color: #2c2c2c;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+.details__prices {
+	margin: 10px 0;
+}
+.details__actual {
+	text-decoration: line-through;
+	font-size: 20px;
+}
+.details__discount {
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+
+
+
+.details__incDec{
+  display: flex;
+}
+.inc, .dec, .quantity{
+  width:60px;
+  height:60px;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  border:1px solid silver;
+
+}
+.quantity{
+  border-left: none;
+  border-right: none;
+}
+
+.inc,.dec {
+	cursor: pointer;
+}
+
+.btn-default {
+	margin-left: 10px;
+	width: 100%;
+	border: none;
+	background: var(--main);
+	color: var(--white);
+	outline: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.details__p {
+	margin-top: 15px;
+}
+.details__p h4 {
+	font-weight: 600;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+
+
+
 
 @media (max-width: 765px) {
   .container {
@@ -132,6 +213,8 @@ a {
     padding-right: 0;
   }
 }
+
+
 @media (max-width: 400px) {
   .col-3 {
     width: 100%;
@@ -143,3 +226,5 @@ a {
     padding-right: 0;
   }
 }
+
+
