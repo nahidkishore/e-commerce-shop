@@ -1,6 +1,10 @@
 import { createStore, combineReducers } from "redux";
 import ProductReducer from "./reducers/ProductReducer";
-
-const root = combineReducers({ ProductReducer });
-const store = createStore(root);
+import CartReducer from "./reducers/CartReducer";
+import { devToolsEnhancer } from "redux-devtools-extension";
+const root = combineReducers({
+  ProductReducer,
+  CartReducer,
+});
+const store = createStore(root, devToolsEnhancer());
 export default store;

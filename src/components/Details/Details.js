@@ -2,23 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import currencyFormatter from "currency-formatter";
-import { BsDash,BsPlus } from "react-icons/bs";
+import { BsDash, BsPlus } from "react-icons/bs";
 const Details = () => {
-  const [quantity,setQuantity]=useState(1);
+  const [quantity, setQuantity] = useState(1);
   const { id } = useParams();
   const dispatch = useDispatch();
   const { product } = useSelector((state) => state.ProductReducer);
-  console.log(product);
+  //console.log(product);
   useEffect(() => {
     dispatch({ type: "PRODUCT", id });
   }, [id]);
 
-
-  const deQuantity=() =>{
-    if(quantity>1){
-      setQuantity(quantity-1)
+  const deQuantity = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
     }
-  }
+  };
   return (
     <div className="container mt-100">
       <div className="row">
@@ -41,19 +40,32 @@ const Details = () => {
 
           <div className="details__info">
             <div className="details__incDec">
-            <span onClick={deQuantity} className="dec"> <BsDash/></span>
-  <span className="quantity">{quantity}</span>
-              <span onClick={()=> setQuantity(quantity+1)} className="inc"><BsPlus/> </span>
-              <button className="btn-default">Add to Cart</button>
+              <span onClick={deQuantity} className="dec">
+                {" "}
+                <BsDash />
+              </span>
+              <span className="quantity">{quantity}</span>
+              <span onClick={() => setQuantity(quantity + 1)} className="inc">
+                <BsPlus />{" "}
+              </span>
+              <button
+                className="btn-default"
+                onClick={() =>
+                  dispatch({
+                    type: "ADD_TO_CART",
+                    payload: { product, quantity },
+                  })
+                }
+              >
+                Add to Cart
+              </button>
             </div>
-           
-
           </div>
 
           <div className="details__p">
-                    <h4>Details</h4>
-                    {product.desc}
-                </div>
+            <h4>Details</h4>
+            {product.desc}
+          </div>
         </div>
       </div>
     </div>
