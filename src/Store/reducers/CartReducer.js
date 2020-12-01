@@ -45,7 +45,7 @@ const CartReducer = (state = initSate, action) => {
       return {
         ...state,
         totalPrice: state.totalPrice + findPro.discountPrice,
-        totalQuantity: state.totalQuantity + 1,
+        totalQuantity: state.totalQuantity - 1,
       };
         }
         else{
