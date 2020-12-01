@@ -1,6 +1,6 @@
 
 ## Ecommerce shop
-[website] (https://e-commerce-shop-site.netlify.app/)
+[website](https://e-commerce-shop-site.netlify.app/)
 
 It is a single page e-commerce website, where the user can see the details of any product and add it to the product cart. In the product details section, if the user wants, he can decrease and increase the quantity of the product. In the cart section, if the user wants, he can add multiple products, increase, decrease, and remove the quantity of the product. This is a fully responsive site. Created this project using Redox and React. I will add the payment gateway system in a few days.
 
